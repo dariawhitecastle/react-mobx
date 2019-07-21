@@ -1,25 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Nav } from './containers/Nav';
+import { HomePage } from './containers/HomePage';
+import { Repos } from './containers/Repos';
+import { Form } from './containers/Form';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 import './App.css';
+import { Grommet } from 'grommet';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Grommet full>
+        <Nav />
+        <Route path='/' exact component={HomePage} />
+        <Route path='/repos' component={Repos} />
+        <Route path='/form' component={Form} />
+      </Grommet>
+    </Router>
   );
 }
 
