@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { observer } from 'react-mobx';
+import { observer } from 'mobx-react';
 import { Box, Heading, Form } from 'grommet';
 import { ReposContext } from '../../stores/ReposStore';
 import { StyledFormField, StyledButton } from './HomePage.styles';
