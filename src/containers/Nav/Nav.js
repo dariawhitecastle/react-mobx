@@ -1,6 +1,6 @@
 import React, { useState, Fragment } from 'react';
 import { Box, Button, Text, Grid } from 'grommet';
-import { Link, Route } from 'react-router-dom';
+import { Route, NavLink } from 'react-router-dom';
 import { HomePage } from '../HomePage';
 import { Repos } from '../Repos';
 import { Form } from '../Form';
@@ -67,15 +67,16 @@ const Nav = () => {
               }
             ]}>
             {routes.map(({ id, name, path }) => (
-              <Link key={id} to={path}>
-                <Box
-                  pad={{
-                    horizontal: 'medium',
-                    vertical: 'small'
-                  }}>
-                  <Button>{name}</Button>
-                </Box>
-              </Link>
+              <Box
+                key={id}
+                pad={{
+                  horizontal: 'medium',
+                  vertical: 'small'
+                }}>
+                <NavLink to={path}>
+                  <Button label={name} plain />
+                </NavLink>
+              </Box>
             ))}
           </Box>
         )}
